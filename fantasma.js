@@ -11,8 +11,17 @@ class fantasma extends gameObject {
     this.frame = (this.frame == 5)?0:this.frame;
   };
 
-  eat(menjar){
-    var distancia = dist(this.coordenadaX, this.coordenadaY, menjar.coordenadaX, menjar.coordenadaY);
+  eatMenjar(menjar){
+    var distancia = dist(this.coordenadaX, this.coordenadaY, menjar.coordenadaX*IMGSIZE, menjar.coordenadaY*IMGSIZE);
+    if(distancia < this.radius){
+      return true;
+    }else{
+      return false;
+    }
+  };
+
+  eatPoder(poder){
+    var distancia = dist(this.coordenadaX, this.coordenadaY, poder.coordenadaX*IMGSIZE, poder.coordenadaY*IMGSIZE);
     if(distancia < this.radius){
       return true;
     }else{

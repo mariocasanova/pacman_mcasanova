@@ -5,9 +5,10 @@ var poderImg;
 
 var pacman;
 var roques = [];
-var menjars = [];
+var podersmenjars = [];
 var poders = [];
-var plat = new plataforma();
+var menjars = [];
+var plat = new Plataforma();
 
 function preload(){
   rocaImg = loadImage("imatges/roca.bmp");
@@ -17,6 +18,7 @@ function preload(){
 };
 
 function setup(){
+  //createCanvas(plat.files*32,plat.columnes*32);
   createCanvas(930,638);
   for(var i = 0; i < plat.files; i++){
     for(var j = 0; j < plat.columnes; j++){
@@ -45,8 +47,14 @@ function draw(){
   };
   pacman.show();
   for(var i=0; i < menjars.length; i++){
-    if(pacman.eat(menjars[i])){
+    if(pacman.eatMenjar(menjars[i])){
       menjars.splice(i,1);
+    }
+  };
+
+  for(var i=0; i < poders.length; i++){
+    if(pacman.eatPoder(poders[i])){
+      poders.splice(i,1);
     }
   };
 
