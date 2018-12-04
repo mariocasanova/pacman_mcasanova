@@ -13,11 +13,11 @@ class fantasma extends gameObject {
 
   eat(menjar){
     var distancia = dist(this.coordenadaX, this.coordenadaY, menjar.coordenadaX, menjar.coordenadaY);
-    if(distancia < 16 + 16){
+    if(distancia < this.radius){
       return true;
     }else{
       return false;
-  }
+    }
   };
 
   move(d){

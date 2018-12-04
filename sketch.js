@@ -1,15 +1,19 @@
 var rocaImg;
 var menjarImg;
 var pacmanImg;
+var poderImg;
+
 var pacman;
 var roques = [];
 var menjars = [];
+var poders = [];
 var plat = new plataforma();
 
 function preload(){
   rocaImg = loadImage("imatges/roca.bmp");
   menjarImg = loadImage("imatges/food.png");
   pacmanImg = loadImage("imatges/pac.png");
+  poderImg = loadImage("imatges/grape.png");
 };
 
 function setup(){
@@ -22,6 +26,8 @@ function setup(){
          menjars.push(new menjar(j,i));
        if(plat.platform[i][j] == '+')
          pacman = (new fantasma(j * IMGSIZE, i * IMGSIZE));
+       if(plat.platform[i][j] == '&')
+         poders.push(new poder(j,i));
     }
   }
 };
@@ -33,6 +39,9 @@ function draw(){
   };
   for(var i=0; i < menjars.length; i++){
     menjars[i].show();
+  };
+  for(var i=0; i < poders.length; i++){
+    poders[i].show();
   };
   pacman.show();
   for(var i=0; i < menjars.length; i++){
@@ -69,4 +78,4 @@ function keyPressed(){
 
       }
     }
-}
+};
