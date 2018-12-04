@@ -1,8 +1,8 @@
-function Roca(x,y){
-  this.x = x;
-  this.y = y;
-
-  this.show = function(){
-    image(rocaImg,x,y);
-  }
+class roca extends gameObject{
+  constructor(x,y){
+    super(x,y);
+  };
+  show(){
+    image(rocaImg,this.coordenadaX*IMGSIZE,this.coordenadaY*IMGSIZE);
+  };
 }
