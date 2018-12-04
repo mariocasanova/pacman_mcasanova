@@ -47,21 +47,26 @@ function keyPressed(){
     if(keyCode == RIGHT_ARROW){
       if(plat.platform[pacman.coordenadaY/32][pacman.coordenadaX/32 + 1] != '*'){
         pacman.move(0);
+
+
       }
     }
     if(keyCode == LEFT_ARROW){
       if(plat.platform[pacman.coordenadaY/32][pacman.coordenadaX/32 - 1] != '*'){
         pacman.move(2);
+
       }
     }
     if(keyCode == DOWN_ARROW){
-      if(plat.platplatformaforma[pacman.coordenadaY/32 + 1][pacman.coordenadaX/32] != '*'){
+      if(plat.platform[pacman.coordenadaY/32 + 1][pacman.coordenadaX/32] != '*'){
         pacman.move(1);
+
       }
     }
     if(keyCode == UP_ARROW){
       if(plat.platform[pacman.coordenadaY/32 - 1][pacman.coordenadaX/32] != '*'){
         pacman.move(3);
+
       }
     }
 }
