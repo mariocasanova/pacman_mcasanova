@@ -1,8 +1,9 @@
-function Menjar(x,y){
-    this.x = x;
-    this.y = y;
+class menjar extends gameObject{
+  constructor(x,y){
+    super(x,y);
     this.radius = 16;
-    this.show = function(){
-      image(menjarImg,this.x,this.y);
-    }
+  };
+  show(){
+    image(menjarImg,this.coordenadaX*IMGSIZE,this.coordenadaY*IMGSIZE);
+  };
 }
