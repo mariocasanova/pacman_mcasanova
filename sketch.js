@@ -19,8 +19,7 @@ function preload(){
 
 function setup(){
   plat = new plataforma();
-  createCanvas(930,638+FOOTER);
-  textSize(30);
+  createCanvas(plat.columnes*IMGSIZE,plat.files*IMGSIZE+FOOTER);
   for(var i = 0; i < plat.files; i++){
     for(var j = 0; j < plat.columnes; j++){
        if(plat.platform[i][j] == '*')
@@ -33,10 +32,13 @@ function setup(){
          poders.push(new poder(j,i));
     }
   }
+  textSize(30);
 };
 
 function draw(){
   background(0);
+  textAlign(LEFT);
+  drawWords(plat.files*IMGSIZE);
   for(var i=0; i < roques.length; i++){
     roques[i].show();
   };
@@ -58,6 +60,7 @@ function draw(){
       poders.splice(i,1);
     }
   };
+
 
 };
 
@@ -86,8 +89,8 @@ function keyPressed(){
 
 function drawWords(x){
   fill(255);
-  text("Puntuació - "+pacman.score,0,x);
+  text("Puntuació - "+pacman.score,25,x+55);
 
   fill(255);
-  text("Vides - "+pacman.lives,0,x);
+  text("Vides - "+pacman.lives,25,x+85);
 };
