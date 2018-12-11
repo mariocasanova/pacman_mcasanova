@@ -61,36 +61,35 @@ function draw(){
     }
   };
 
+  for(var i=0; i < roques.length; i++){
+    if(pacman.eatRoca(roques[i])){
+      poders.splice(i,1);
+    }
+  };
+
 
 };
 
 function keyPressed(){
     if(keyCode == RIGHT_ARROW){
-      if(plat.platform[pacman.coordenadaY/32][pacman.coordenadaX/32 + 1] != '*'){
         pacman.move(0);
-      }
     }
     if(keyCode == LEFT_ARROW){
-      if(plat.platform[pacman.coordenadaY/32][pacman.coordenadaX/32 - 1] != '*'){
         pacman.move(2);
-      }
     }
     if(keyCode == DOWN_ARROW){
-      if(plat.platform[pacman.coordenadaY/32 + 1][pacman.coordenadaX/32] != '*'){
         pacman.move(1);
-      }
     }
     if(keyCode == UP_ARROW){
-      if(plat.platform[pacman.coordenadaY/32 - 1][pacman.coordenadaX/32] != '*'){
+    //  if(plat.platform[pacman.coordenadaY/32 - 1][pacman.coordenadaX/32] != '*'){
         pacman.move(3);
-      }
     }
 };
 
 function drawWords(x){
   fill(255);
-  text("Puntuació - "+pacman.score,25,x+55);
+  text("Puntuació > "+pacman.score,25,x+55);
 
   fill(255);
-  text("Vides - "+pacman.lives,25,x+85);
+  text("Vides > "+pacman.lives,25,x+85);
 };
