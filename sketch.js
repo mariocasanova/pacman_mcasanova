@@ -19,7 +19,8 @@ function preload(){
 
 function setup(){
   plat = new plataforma();
-  createCanvas(930,638);
+  createCanvas(930,638+FOOTER);
+  textSize(30);
   for(var i = 0; i < plat.files; i++){
     for(var j = 0; j < plat.columnes; j++){
        if(plat.platform[i][j] == '*')
@@ -64,26 +65,29 @@ function keyPressed(){
     if(keyCode == RIGHT_ARROW){
       if(plat.platform[pacman.coordenadaY/32][pacman.coordenadaX/32 + 1] != '*'){
         pacman.move(0);
-
-
       }
     }
     if(keyCode == LEFT_ARROW){
       if(plat.platform[pacman.coordenadaY/32][pacman.coordenadaX/32 - 1] != '*'){
         pacman.move(2);
-
       }
     }
     if(keyCode == DOWN_ARROW){
       if(plat.platform[pacman.coordenadaY/32 + 1][pacman.coordenadaX/32] != '*'){
         pacman.move(1);
-
       }
     }
     if(keyCode == UP_ARROW){
       if(plat.platform[pacman.coordenadaY/32 - 1][pacman.coordenadaX/32] != '*'){
         pacman.move(3);
-
       }
     }
+};
+
+function drawWords(x){
+  fill(255);
+  text("Puntuació - "+pacman.score,0,x);
+
+  fill(255);
+  text("Vides - "+pacman.lives,0,x);
 };
