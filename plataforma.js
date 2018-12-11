@@ -1,6 +1,7 @@
 const FILES = 20;
 const COLUMNES = 29;
 const IMGSIZE = 32;
+const FOOTER = 150;
 
 class plataforma {
   constructor(){
