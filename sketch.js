@@ -8,7 +8,7 @@ var roques = [];
 var podersmenjars = [];
 var poders = [];
 var menjars = [];
-var plat = new Plataforma();
+var plat;
 
 function preload(){
   rocaImg = loadImage("imatges/roca.bmp");
@@ -18,7 +18,7 @@ function preload(){
 };
 
 function setup(){
-  //createCanvas(plat.files*32,plat.columnes*32);
+  plat = new plataforma();
   createCanvas(930,638);
   for(var i = 0; i < plat.files; i++){
     for(var j = 0; j < plat.columnes; j++){
