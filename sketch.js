@@ -20,6 +20,7 @@ function preload(){
 function setup(){
   plat = new plataforma();
   createCanvas(plat.columnes*IMGSIZE,plat.files*IMGSIZE+FOOTER);
+  //plat.generarMapa(plat.files,plat.columnes,0);
   for(var i = 0; i < plat.files; i++){
     for(var j = 0; j < plat.columnes; j++){
        if(plat.platform[i][j] == '*')
@@ -66,8 +67,6 @@ function draw(){
       poders.splice(i,1);
     }
   };
-
-
 };
 
 function keyPressed(){
@@ -81,7 +80,6 @@ function keyPressed(){
         pacman.move(1);
     }
     if(keyCode == UP_ARROW){
-    //  if(plat.platform[pacman.coordenadaY/32 - 1][pacman.coordenadaX/32] != '*'){
         pacman.move(3);
     }
 };
@@ -93,3 +91,20 @@ function drawWords(x){
   fill(255);
   text("Vides > "+pacman.lives,25,x+85);
 };
+
+function representar(){
+
+  alert("Has perdut!  Puntuació total -> "+pacman.score);
+  tryAgain=prompt('Vols tancar o tornar a jugar? 1=Tancar, 2=Jugar','');
+
+  if(tryAgain == 1 || tryAgain == 2){
+      if(tryAgain == 1){
+        window.close();
+      }else if(tryAgain == 2){
+        location.reload();
+        }
+  }else{
+    alert("Valor invalid. Tornes a jugar!.");
+    location.reload();
+  }
+}

@@ -11,6 +11,19 @@ class fantasma extends gameObject {
   show(){
     image(pacmanImg, this.coordenadaX, this.coordenadaY, 32, 32, 32*this.frame++, 32*this.direction, 32, 32);﻿
     this.frame = (this.frame == 5)?0:this.frame;
+
+      if(this.coordenadaX==29*IMGSIZE && this.coordenadaY==12*IMGSIZE){
+       this.coordenadaX=this.coordenadaX-(29*IMGSIZE);
+      }
+      if(this.coordenadaX==29*IMGSIZE && this.coordenadaY==11*IMGSIZE){
+        this.coordenadaX=this.coordenadaX-(29*IMGSIZE);
+      }
+      if(this.coordenadaX==0-IMGSIZE && this.coordenadaY==12*IMGSIZE){
+        this.coordenadaX=this.coordenadaX+(29*IMGSIZE);
+      }
+      if(this.coordenadaX==0-IMGSIZE && this.coordenadaY==11*IMGSIZE){
+        this.coordenadaX=this.coordenadaX+(29*IMGSIZE);
+      }
   };
 
   recolocar(){
@@ -52,7 +65,7 @@ class fantasma extends gameObject {
       this.lives = this.lives -1;
       this.recolocar();
       if(this.lives == 0){
-        alert("Mort");
+        representar();
       }
       return true;
     }else{
@@ -60,6 +73,11 @@ class fantasma extends gameObject {
     }
   };
 
+  eatAll(menjar,poder,roca){
+    if(this.menjar == 0 && this.poder == 0 && this.roca == 0){
+      alert("winner");
+    }
+  }
   move(d){
     this.direction = d;
     if(this.direction == 0){
