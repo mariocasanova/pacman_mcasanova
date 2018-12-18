@@ -2,6 +2,8 @@ var rocaImg;
 var menjarImg;
 var pacmanImg;
 var poderImg;
+var vidaImg;
+var videsImg = [];
 
 var pacman;
 var roques = [];
@@ -9,12 +11,16 @@ var podersmenjars = [];
 var poders = [];
 var menjars = [];
 var plat;
+var font;
 
 function preload(){
   rocaImg = loadImage("imatges/roca.bmp");
   menjarImg = loadImage("imatges/food.png");
   pacmanImg = loadImage("imatges/pac.png");
   poderImg = loadImage("imatges/grape.png");
+  font = loadFont("fonts/crackman.ttf");
+  vidaImg = loadImage("imatges/vidamenys.png");
+  videsImg = loadImage("imatges/videss.png");
 };
 
 function setup(){
@@ -85,11 +91,24 @@ function keyPressed(){
 };
 
 function drawWords(x){
+
+  text("🍎🍎🍎🍎",25,x+115);
   fill(255);
+  textFont(font);
   text("Puntuació > "+pacman.score,25,x+55);
+
+  image(menjarImg,765,x+25);
+  fill(255);
+  text("> "+menjars.length,800,x+55);
+
+  image(poderImg,765,x+55);
+  fill(255);
+  text("> "+poders.length,800,x+85);
 
   fill(255);
   text("Vides > "+pacman.lives,25,x+85);
+
+
 };
 
 function puntuacio(){
