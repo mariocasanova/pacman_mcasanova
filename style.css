@@ -47,3 +47,79 @@ body {
 	position:relative;
 	top:1px;
 }
+
+
+#logo-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#logo-container>img {
+    max-width: 50%;
+    border: 2px solid red;
+}
+
+
+body {
+        background-image: url(imatges/PAMCNA.png);
+        background-repeat: repeat-y;
+    }
+    .wrapper {
+        background:url("imatges/PAMCNA.png");
+        align-items: center;
+        justify-content: center;
+    }
+    #jugar {
+      font-family: 'Crackman';
+      font-size: 55px;
+      position: absolute;
+      color:#ffffff;
+      top: 400px;
+      left: 470px;
+
+    }
+
+    #sortir {
+      font-family: 'Crackman';
+      font-size: 55px;
+      position: absolute;
+      color:#ffffff;
+      position: absolute;
+      top: 400px;
+      left: 750px;
+    }
+
+    #help {
+      font-family: 'Crackman';
+      font-size: 55px;
+      position: absolute;
+      color:#ffffff;
+      position: absolute;
+      top: 500px;
+      left: 630px;
+    }
+
+    #configuracio {
+      font-family: 'Crackman';
+      font-size: 55px;
+      position: absolute;
+      color:#ffffff;
+      position: absolute;
+      top: 600px;
+      left: 500px;
+    }
+
+    #informacio {
+      font-family: 'Crackman';
+      font-size: 55px;
+      position: absolute;
+      color:#ffffff;
+      position: absolute;
+      top: 700px;
+      left: 530px;
+    }
+
+    @font-face {
+        font-family: 'Crackman'; /*a name to be used later*/
+        src: url('fonts/crackman.ttf'); /*URL to font*/
+    }

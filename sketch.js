@@ -92,8 +92,7 @@ function drawWords(x){
   text("Vides > "+pacman.lives,25,x+85);
 };
 
-function representar(){
-
+function puntuacio(){
   alert("Has perdut!  Puntuació total -> "+pacman.score);
   tryAgain=prompt('Vols tancar o tornar a jugar? 1=Tancar, 2=Jugar','');
 

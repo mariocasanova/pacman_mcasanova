@@ -65,7 +65,7 @@ class fantasma extends gameObject {
       this.lives = this.lives -1;
       this.recolocar();
       if(this.lives == 0){
-        representar();
+        puntuacio();
       }
       return true;
     }else{
